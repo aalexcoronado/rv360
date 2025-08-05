@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Recorridos Virtuales</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkaCny9l74aNScar4JRsoPETttR1ECOxI&libraries=places"></script>
+</head>
+<body>
+  <h1>Generador de Recorridos Virtuales</h1>
+
+  <div id="g_id_onload"
+       data-client_id="aalexcoronado@gmail.com"
+       data-context="signin"
+       data-ux_mode="popup"
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
+  </div>
+
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <div class="input-group">
+    <label for="image360">Subir Foto 360°:</label>
+    <input type="file" id="image360" accept="image/*">
+  </div>
+
+  <div class="input-group">
+    <label>Seleccionar ubicación en el mapa:</label>
+    <div id="map"></div>
+  </div>
+  <div class="input-group">
+    <button onclick="uploadToStreetView()">Subir a Google Maps</button>
+  </div>
+
+  <div class="preview">
+    <h3>Vista previa:</h3>
+    <img id="previewImage" src="" alt="Vista previa" style="max-width: 100%;">
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
